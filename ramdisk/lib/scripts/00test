@@ -1,0 +1,16 @@
+#!/system/bin/sh
+# Init.d test
+
+busybox mount -o remount,rw -t auto /system
+busybox mount -o remount,rw -t auto /data
+
+if [ -e /data/I_Get_Tux.log ]; then
+rm /data/I_Get_Tux.log
+fi
+
+echo "================================" >> /data/I_Get_Tux.log
+echo "Cleverior.ipul @ XDA 2014" >> /data/I_Get_Tux.log
+echo "Init.d is working !!!" >> /data/I_Get_Tux.log
+echo "Thanks for using GetuX Kernel (^_^)" >> /data/I_Get_Tux.log
+echo "excecuted on $(date +"%d-%m-%Y %r" )" >> /data/I_Get_Tux.log
+echo "================================" >> /data/I_Get_Tux.log
